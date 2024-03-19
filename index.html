@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Bouncing into Chaos: 4D Global Reflectance Modelling for Decomposed Driving Scenes">
+  <meta name="keywords" content="NeRF, Autonomous Driving, Simulator, Reflectance">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Meta tags for Zotero grab citation -->
+  <meta name="citation_title"
+    content="Bouncing into Chaos: 4D Global Reflectance Modelling for Decomposed Driving Scenes">
+  <meta name="citation_author" content="Wu, Zirui">
+  <meta name="citation_author" content="Liu, Tianyu">
+  <meta name="citation_author" content="Luo, Liyi">
+  <meta name="citation_author" content="Zhong, Zhide">
+  <meta name="citation_author" content="Chen, Jianteng">
+  <meta name="citation_author" content="Xiao, Hongmin">
+  <meta name="citation_author" content="Hou, Chao">
+  <meta name="citation_author" content="Lou, Haozhe">
+  <meta name="citation_author" content="Chen, Yuantao">
+  <meta name="citation_author" content="Yang, Runyi">
+  <meta name="citation_author" content="Huang, Yuxin">
+  <meta name="citation_author" content="Ye, Xiaoyu">
+  <meta name="citation_author" content="Yan, Zike">
+  <meta name="citation_author" content="Shi, Yongliang">
+  <meta name="citation_author" content="Liao, Yiyi">
+  <meta name="citation_author" content="Zhao, Hao">
+  <meta name="citation_publication_date" content="2023/07">
+  <meta name="citation_conference_title" content="CAAI International Conference on Artificial Intelligence (CICAI)">
+  <meta name="citation_pdf_url" content="https://open-air-sun.github.io/mars/static/data/CICAI_MARS_FullPaper.pdf">
+  <meta name="citation_abstract"
+    content="Nowadays, autonomous cars can drive smoothly in ordinary cases, and it is widely recognized that realistic sensor simulation will play a critical role in solving remaining corner cases by simulating them. To this end, we propose an autonomous driving simulator based upon neural radiance fields (NeRFs). Compared with existing works, ours has three notable features: (1) Instance-aware. Our simulator models the foreground instances and background environments separately with independent networks so that the static (e.g., size and appearance) and dynamic (e.g., trajectory) properties of instances can be controlled separately.  (2) Modular. Our simulator allows flexible switching between different modern NeRF-related backbones, sampling strategies, input modalities, etc. We expect this modular design to boost academic progress and industrial deployment of NeRF-based autonomous driving simulation.  (3) Realistic. Our simulator set new state-of-the-art photo-realism results given the best module selection. Our simulator will be open-sourced while most of our counterparts are not.">
+  <meta name="robots" content="index,follow">
+  <meta name="description"
+    content="Nowadays, autonomous cars can drive smoothly in ordinary cases, and it is widely recognized that realistic sensor simulation will play a critical role in solving remaining corner cases by simulating them. To this end, we propose an autonomous driving simulator based upon neural radiance fields (NeRFs). Compared with existing works, ours has three notable features: (1) Instance-aware. Our simulator models the foreground instances and background environments separately with independent networks so that the static (e.g., size and appearance) and dynamic (e.g., trajectory) properties of instances can be controlled separately.  (2) Modular. Our simulator allows flexible switching between different modern NeRF-related backbones, sampling strategies, input modalities, etc. We expect this modular design to boost academic progress and industrial deployment of NeRF-based autonomous driving simulation.  (3) Realistic. Our simulator set new state-of-the-art photo-realism results given the best module selection. Our simulator will be open-sourced while most of our counterparts are not.">
+  <link rel="author" href="https://wuzirui.github.io/" />
+  <title>Bouncing into Chaos: 4D Global Reflectance Modelling for Decomposed Driving Scenes</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D9CHDFCS1E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-D9CHDFCS1E');
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Bouncing into Chaos: 4D Global Reflectance Modelling for Decomposed
+              Driving Scenes</h1>
+
+            <h5 class="title is-5 has-text-centererd"></h5>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://xBeho1der.github.io">Jianteng Chen</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/saythe17">Yuxin Huang
+                </a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                Sirui Xie<sup>1,3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://github.com/dawning77">Junchen Liu</a><sup>1,4</sup>,
+              </span>
+              <span class="author-block">
+                Jingwei Zhao<sup>1,5</sup>,
+              </span>
+              <span class="author-block">
+                Yuan
+                Feng<sup>1,6</sup>,
+              </span>
+              <span class="author-block">
+                Weihao Gu<sup>1,5</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/fromandto">Hao Zhao</a><sup>1</sup>
+              </span>
+            </div>
+
+            <br>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>AiR, Tsinghua University,</span>
+              <span class="author-block"><sup>2</sup>Beijing Institute of Technology,</span>
+              <span class="author-block"><sup>3</sup>Beijing University of Civil Engineering and Architecture,</span>
+              <span class="author-block"><sup>4</sup>Beihang University,</span>
+              <span class="author-block"><sup>5</sup>Haomo.ai,</span>
+              <span class="author-block"><sup>6</sup>Baidu</span>
+            </div>
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="./static/data/Bouncing_into_Chaos.pdf" download="CICAI_MARS_FullPaper.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://anonymous.4open.science/r/Bouncing_into_Chaos/"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted controls loop playsinline height="100%">
+          <source src="./static/videos/Bouncing_into_Chaos.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <br>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Neural radiance fields (NeRFs) have shown great effectiveness in scene reconstruction, representation,
+              rendering, and editing. Departing from NeRF, there are two fundamental research directions (among others):
+              reflectance modelling and dynamic decomposed scene modelling. However, existing state-of-the-art
+              reflectance modelling methods for NeRF are restricted to static scenes and fail to address global
+              reflectance behaviors in dynamic decomposed scenes (which are typical in autonomous driving simulation).
+              We analyze the problem and demonstrate that this unvisited setting is challenged by two ambiguity issues:
+              the first is density ambiguity between primary and secondary light paths in a single frame, and the second
+              is radiance ambiguity between primary and secondary light paths in different frames. Resolving these
+              ambiguity issues with volume rendering is difficult so we propose a simple but effective solution that
+              models all secondary paths radiance calculation using an additional 4D radiance field. Since this 4D field
+              does not explicitly decompose the driving scene, we call it <em>chaos</em> and all the secondary paths
+              bounce into this chaos. Using standard benchmarks, we demonstrate that our method achieves clear margins
+              (around 3.52dB PSNR) over a state-of-the-art method named MARS. Visualization shows improved reflectance.
+              Codes, data, and models will be publicly available at <a
+                href="https://anonymous.4open.science/r/Bouncing_into_Chaos/">here</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+  </section>
+
+  <section>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered" align="center">
+        <img src="./static/images/pipeline.jpg" class="interpolation-image">
+        <br>
+        <br>
+      </div>
+      <p>
+        <strong>Overview:</strong> our method, Bouncing into Chaos, utilizes a two-stage approach. In the initial
+        training stage, we run
+        our first pass model for some iterations to estimate the initial attributes including normals, density, depth,
+        and color. Subsequently, the second pass model is deployed, constructing a set of rays leveraging the previously
+        obtained normals and depth. Then compose the radiance value and jointly refining with the first pass model.
+      </p>
+    </div>
+    <br>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3"> Results </h2>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <h2 class="title is-4"><a
+              href="https://europe.naverlabs.com/research/computer-vision/proxy-virtual-worlds-vkitti-2/">Virtual-KITTI-2
+              Scene18</a>
+          </h2>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p>
+                A reconstruction of the Virtual-KITTI-2 dataset Scene18.
+              </p>
+              <video id="matting-video" autoplay muted controls loop playsinline height="100%">
+                <source src="./static/videos/Scene18.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <h2 class="title is-4"><a href=https://www.cvlibs.net/datasets/kitti/eval_tracking.php>Virtual-KITTI-2
+              Scene06</a></h2>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p>
+                A reconstruction of the Virtual-KITTI-2 dataset Scene06.
+              </p>
+              <video id="matting-video" autoplay muted controls loop playsinline height="100%">
+                <source src="./static/videos/Scene06.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="columns is-centered">
+        <img src="./static/images/quantitative.png" class="interpolation-image" width="80%">
+      </div>
+      <div class="is-centered has-text-centered">
+        <p>
+          Qunatitative results on image reconstruction task & Comparisons on the settings with baseline methods.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Editing</h2>
+          <div class="content has-text-justified">
+            <p>
+              You can try playing with the widget in below that allows you to moving the objects in the scene.
+            </p>
+          </div>
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column is-3 has-text-centered">
+              <img src="./static/images/rotate_start.png" class="interpolation-image"
+                alt="Rotation start reference image." />
+              <p>Start Frame</p>
+            </div>
+            <div class="column interpolation-video-column">
+              <div id="interpolation-image-wrapper">
+                Loading...
+              </div>
+              <input class="slider is-fullwidth is-large is-info" id="interpolation-slider" step="1" min="0" max="65"
+                value="0" type="range">
+            </div>
+            <div class="column is-3 has-text-centered">
+              <img src="./static/images/translation_end.png" class="interpolation-image"
+                alt="Rotation end reference image." />
+              <p class="is-bold">End Frame</p>
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Experiment results</h2>
+          <br>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <img src="./static/images/ablation.png" class="interpolation-image" width="80%">
+      </div>
+      <div class="is-centered has-text-centered">
+        <p>
+          Comparison of Virtual KITTI reconstruction result in Scene 06, 18 and 20. We conducted experiments on three
+          different scenarios: utilizing only normal supervision, using DSINE prediction result for normal input,
+          and using accurate normal input. The best value for each scene is highlighted.
+        </p>
+      </div>
+      <br>
+      <br>
+      <div class="columns is-centered">
+        <img src="./static/images/qualitative.jpg" class="interpolation-image" width="80%">
+      </div>
+      <div class="is-centered has-text-centered">
+        <p>
+          Evaluation on synthetic data. Three scenes, which are Scene 06, 18, and 20 from Virtual KITTI have been
+          rendered using both our method and MARS, along with a separate render for the second pass
+          RGB. Best viewed when zoomed in.
+        </p>
+      </div>
+      <br>
+      <br>
+      <div class="columns is-centered">
+        <img src="./static/images/qualitative_dsine.jpg" class="interpolation-image" width="80%">
+      </div>
+      <div class="is-centered has-text-centered">
+        <p>
+          Qualitative results of RGB images, second pass images, and normal images obtained using the
+          DSINE surface normal and ground truth surface normal.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Related Links</h2>
+          <div class="content has-text-justified">
+            <p>
+              There's a lot of excellent work that was introduced around the same time as ours.
+            </p>
+            <p>
+              <a href="nerf.studio">Nerfstudio:</a> A framework offers a modular approach to NeRF implementation.
+            </p>
+            <p>
+              Some excellent priors works, such as <a href="https://arxiv.org/abs/2011.10379">Neural Scene Graph</a>, <a
+                href="https://arxiv.org/abs/2205.04334">Panoptic Neural Fields</a>, etc.
+            </p>
+            <p>
+              <a href="https://github.com/yangjiheng/nerf_and_beyond_docs/tree/main">NeRF and Beyond</a>: A friendly
+              research community about NeRF.
+            </p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{chen2024bouncing,
+  title     = {Bouncing into Chaos: 4D Global Reflectance Modelling for Decomposed Driving Scenes}, 
+  author    = {Chen, Jianteng ang Huang, Yuxin and Xie, Sirui and Liu, Junchen and Zhao, Jingwei and Feng, Yuan and Gu, Weihao and Zhao, Hao},
+  ear       = {2024},
+      }</code></pre>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="./static/data/Bouncing_into_Chaos.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/xBeho1der" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              Webpage borrowed from <a href="https://open-air-sun.github.io/mars/">MARS</a>. This web page is
+              Zotero-connector
+              friendly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
