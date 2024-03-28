@@ -1,0 +1,30 @@
+[project]
+name = "mars"
+version = "0.3.1"
+
+dependencies = [
+    "nerfstudio>=0.3.2",
+    "torchtyping",
+    "torch>=2.0.1"
+]
+
+[tool.setuptools.packages.find]
+include = ["mars*"]
+
+[project.entry-points.'nerfstudio.method_configs']
+
+
+kitti_full_recon = 'mars.experiment_configs.kitti.kitti_full:KITTI_Recon_Car_Depth_Semantic'
+vkitti_full_recon = 'mars.experiment_configs.vkitti.vkitti_full:VKITTI_Recon_Car_Depth_Semantic'
+
+kitti_nvs25 = 'mars.experiment_configs.kitti.kitti_nvs:KITTI_nvs25_Car_Depth'
+kitti_nvs50 = 'mars.experiment_configs.kitti.kitti_nvs:KITTI_nvs50_Car_Depth'
+kitti_nvs75 = 'mars.experiment_configs.kitti.kitti_nvs:KITTI_nvs75_Car_Depth'
+vkitti_nvs25 = 'mars.experiment_configs.vkitti.vkitti_nvs:VKITTI_nvs25_Car_Depth'
+vkitti_nvs50 = 'mars.experiment_configs.vkitti.vkitti_nvs:VKITTI_nvs50_Car_Depth'
+vkitti_nvs75 = 'mars.experiment_configs.vkitti.vkitti_nvs:VKITTI_nvs75_Car_Depth'
+
+
+[project.entry-points.'nerfstudio.dataparser_configs']
+KittiData = 'mars.data.mars_kitti_dataparser:KittiParserSpec'
+VKittiData = 'mars.data.mars_vkitti_dataparser:VKittiParserSpec'
